@@ -1,0 +1,5 @@
+./webdrivercss
+./node_modules
+./default_node.json
+./reports/*.xml
+./errorShots/*
