@@ -9,6 +9,10 @@ class HomePage extends mixin(Page, NavigationBar) {
     open() {
         super.open('');
     }
+
+    clickHamburgerMenu(){
+        browser.element('span.icon-bar').click()
+    }
 }
         
 module.exports = new HomePage();

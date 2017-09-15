@@ -10,6 +10,17 @@ defineSupportCode(function ({Given, When, Then}) {
         browser.windowHandleMaximize()
     });
 
+    Given(/^I resize the page resolution to width (\d+) and height (\d+)$/, (width, height) => {
+        browser.setViewportSize({
+            width: width,
+            height: height
+        });
+    });
+
+    When('I click on the hamburger icon menu', () => {
+       homePage.clickHamburgerMenu()
+    });
+
     When('I go to the WebDriverIO home page', () => {
         homePage.open();
     });

@@ -1,3 +1,5 @@
+var CustomReporter = require('./reporter/customized.reporter');
+
 exports.config = {
     
     //
@@ -58,7 +60,7 @@ exports.config = {
     sync: true,
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
-    logLevel: 'result',
+    logLevel: 'error',
     //
     // Enables colors for log output.
     coloredLogs: true,
@@ -118,10 +120,18 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/testrunner/reporters.html
-    reporters: ['junit'],
+    reporters: ['spec', 'junit', CustomReporter],
     reporterOptions: {
         junit: {
+            outputDir: './reports'
+        },
+        json: {
             outputDir: './reports',
+            combined: true,
+            filename: 'wdio-results'
+        },
+        spec: {
+            outputDir: './reports'
         }
     },
     //
@@ -139,7 +149,7 @@ exports.config = {
         profile: [],        // <string[]> (name) specify the profile to use
         strict: false,      // <boolean> fail if there are any undefined or pending steps
         tags: [],           // <string[]> (expression) only execute the features or scenarios with tags matching the expression
-        timeout: 20000,     // <number> timeout for step definitions
+        timeout: 50000,     // <number> timeout for step definitions
         ignoreUndefinedDefinitions: false, // <boolean> Enable this config to treat undefined definitions as warnings.
     },
     

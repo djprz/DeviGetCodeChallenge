@@ -20,17 +20,20 @@ class GuidePage extends mixin(Page, NavigationBar) {
     }
 
     getMenuOption() {
-        return browser.getText('.apinav.guide h3 a')
+        let selector = '.apinav.guide h3 a';
+        browser.waitForVisible(selector, 5000);
+        return browser.getText(selector);
     }
 
     clickMenuOption(option){
-        browser.click('=' + option)
+        browser.click('=' + option);
     }
 
     getMenuSubOptions(option){
         option = option.replace(/\s/g, '').toLowerCase();
-        browser.pause(1000);
-        return browser.getText(`//*[@class='commands ${option}']/a`)
+        let selector = `//*[@class='commands ${option}']/a`;
+        browser.waitForVisible(selector, 5000)
+        return browser.getText(selector)
     }
 }
 

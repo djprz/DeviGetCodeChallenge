@@ -5,7 +5,7 @@ Feature:
     Given I maximize the browser window
 
   @menu
-  Scenario: WebDriverIO Developer Guide option
+  Scenario: WebDriverIO Developer Guide options
     When I go to the WebDriverIO home page
     And I go to the Developer Guide section
     Then I should see the title of the page as "Developer Guide"
@@ -29,7 +29,7 @@ Feature:
       | Upgrade Version     |
 
   @search
-  Scenario: WebDriverIO Developer Guide option
+  Scenario: WebDriverIO search functionality
     When I go to the WebDriverIO home page
     And  I search for "Reporters"
     And I select the first suggestion
