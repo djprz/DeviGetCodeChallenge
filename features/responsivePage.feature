@@ -24,5 +24,5 @@ Feature:
       | Boilerplate         |
       | Standalone Vs. WDIO |
       | What Is New?        |
-      | Upgrade Versionx     |
+      | Upgrade Version     |
 
